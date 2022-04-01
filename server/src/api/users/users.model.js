@@ -5,8 +5,8 @@ const bcrypt = require('bcrypt');
 const { validationPassword, validationEmail } = require('../../utils/validators/validators');
 const userSchema = new mongoose.Schema(
     {
-        name: { type: String, trim: true, required: true },
-        date: { type: Date, trim: true, required: true },
+        name: { type: String, trim: true, required: false },
+        date: { type: Date, trim: true, required: false },
         password: { type: String, trim: true, required: true },
         email: { type: String, trim: true, required: true },
     }
