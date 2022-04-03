@@ -32,6 +32,7 @@ const postOne = async (req, res, next) => {
         book.year = req.body.year;
         book.editorial = req.body.editorial;
         book.img = req.body.img;
+        book.price = req.body.price;
         const bookDB = await book.save();
         
         return res.status(201).json(bookDB)

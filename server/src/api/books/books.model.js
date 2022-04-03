@@ -8,10 +8,12 @@ const booksSchema = new mongoose.Schema(
     // Trim: elimina los espacios al principio y final
     {
         name: { type: String, required: true, trim: true },
-        autor: { type: mongoose.Schema.Types.ObjectId, ref: "authors", required: false},
+        autor: { type: String, required: true, trim: true },
         year: { type: Number, required: false, trim: true },
         editorial: {type: String, required: false, trim: true},
-        img: { type: String, trim: true, required: false }
+        img: { type: String, trim: true, required: false },
+        price: {type: Number, requiered: true, trim: true},
+        description: {type: String, requiered: false, trim: true}
     },
     // Timestamps: fecha de creación - modificación
     {
