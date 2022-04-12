@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 
 // Config de Proxies + CORS -> Meter vuestros dominios ej: http://midominio.dev
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true
 }));
 
