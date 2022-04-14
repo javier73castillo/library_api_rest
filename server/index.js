@@ -27,7 +27,7 @@ configCloudinary();
 // Configuar mis cabeceras -> La información de la Petición
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, PATCH')
-    res.header('Access-Control-Allow-Credentials', true)
+    res.header('Access-Control-Allow-Credentials', false)
     res.header('Access-Control-Allow-Headers', 'Content-Type')
     res.setHeader('Access-Control-Allow-Origin', '*')
     next()
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 // Config de Proxies + CORS -> Meter vuestros dominios ej: http://midominio.dev
 app.use(cors({
     origin: '*',
-    credentials: true
+    credentials: false
 }));
 
 // Límite de flujo de información
