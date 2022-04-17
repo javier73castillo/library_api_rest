@@ -34,10 +34,7 @@ app.use((req, res, next) => {
 })
 
 // Config de Proxies + CORS -> Meter vuestros dominios ej: http://midominio.dev
-app.use(cors({
-    origin: '*',
-    credentials: false
-}));
+app.use(cors({     origin: '*' }));
 
 // Límite de flujo de información
 app.use(express.json({ limit: '5mb' }))
