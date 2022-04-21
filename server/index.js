@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 
 // Config de Proxies + CORS -> Meter vuestros dominios ej: http://midominio.dev
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:4200', 'https://bookstore-react-two.vercel.app/', 'https://library-api-rest.vercel.app/'],
+    origin: ['http://localhost:3000', 'http://localhost:4200', 'https://bookstore-react-two.vercel.app/login', 'https://library-api-rest.vercel.app/'],
     credentials: true
 }));
 
