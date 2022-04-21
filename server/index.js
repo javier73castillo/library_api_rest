@@ -27,14 +27,16 @@ configCloudinary();
 // Configuar mis cabeceras -> La información de la Petición
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, PATCH')
-    res.header('Access-Control-Allow-Credentials', false)
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-    res.header('Access-Control-Allow-Origin: *')
+    res.header('Access-Control-Allow-Credentials', true)
+    res.header('Access-Control-Allow-Headers', 'Content-Type')
     next()
 })
 
 // Config de Proxies + CORS -> Meter vuestros dominios ej: http://midominio.dev
-app.use(cors({     origin: '*' }));
+app.use(cors({
+    origin: ['http://localhost:3000', 'http://localhost:4200', 'https://bookstore-react-two.vercel.app/', 'https://library-api-rest.vercel.app/'],
+    credentials: true
+}));
 
 // Límite de flujo de información
 app.use(express.json({ limit: '5mb' }))
